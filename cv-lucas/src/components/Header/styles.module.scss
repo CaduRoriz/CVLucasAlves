@@ -5,16 +5,96 @@
     width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: row;
 
-    padding: 2rem 4rem;
+    padding: 2rem 3rem;
 
-    border-bottom: 1px solid var(--gray-100);
+    // border-bottom: 1px solid var(--gray-100);
 
     img{
+        display: none; //apenas enquanto nao disponibiliza logo real
         height: 50px;
         width: 50px;
     }
+
+    @media (max-width: 935px){
+        padding: 2rem;
+    }
+
 }
+
+.hamburguer{
+    width: 3rem;
+    height: 2.75rem;
+    padding: 0.5rem;
+    margin-left: auto;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+
+    span{
+        width: 100%;
+        height: 2px;
+        background-color: #b1b1b1;
+
+        span + span{
+            margin-top: 0.5rem;
+        }
+
+        &.bar1 {
+            transition: transform 0.6s;
+          }
+      
+          &.bar2 {
+            transition: opacity 0.6s;
+          }
+      
+          &.bar3 {
+            transition: transform 0.6s;
+          }
+    }
+
+    transition: background-color 0.3s !important;
+
+    &:hover {
+        filter: brightness(1) !important;
+        cursor: pointer;
+    }
+
+    @media (min-width:935px){   
+        display: none;
+    }
+}
+
+
+
+.close {
+    span.bar1 {
+      transform: rotate(-45deg) translate(-9px,9px);
+    }
+    span.bar2 {
+      opacity: 0;
+    }
+    span.bar3 {
+      transform: rotate(45deg) translate(-8Px, -7px);
+    }
+}
+    
+    @media(max-width: 720px) {
+        .close {
+            span.bar1 {
+              transform: rotate(-45deg) translate(-9px,8px);
+            }
+    }
+  }
+
 
 
 
@@ -32,9 +112,13 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+
+    @media (max-width:934px){
+        display: none;
+    }
    
     .buttons{
-        margin: 0 1rem;
+        margin: 0 0.5rem;
         display: flex;
         color: var(--gray-300);
         background: none;
@@ -50,7 +134,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 1px;
-            background: black;
+            background: var(--gren-500);
             transition: 0.4s;
         
         }
@@ -64,7 +148,7 @@
     }
 
     .buttonCallme{
-        color: white;
+        color: var(--gray-50);
         padding: 10px;
         height: 50px;
         background-color: var(--gren-500);
@@ -79,6 +163,57 @@
         }
     }
 
-
 }
+
+.sideHeaderButtons{
+    right:-100%;
+    top: 6.5rem;
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border-left: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+
+    transition: 0.6s;
+
+
+    .buttons{
+        width: 100%;
+        height: 4rem;
+        padding: 1rem 2rem;
+        background: var(--gray-50);
+        border: none;
+        
+        &::after{
+            content: "";
+            position: absolute;
+            margin-top: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gren-500);
+            transition: 0.4s;
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+    
+    }
+
+    @media (min-width: 926px) {
+        display: none;
+    }
+
+    &.visible{
+        right: 0;
+    }
+}
+
 

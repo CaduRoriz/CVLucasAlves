@@ -1,3 +1,1 @@
 # CVLucasAlves
-
-Isabela Linda

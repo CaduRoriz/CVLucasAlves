@@ -7,8 +7,16 @@
   --gray-500: #808080;
   --gray-800: #494D4B;
 
-  --gren-500: #5cac54;
-  --gren-600: #5cc254;
+  // --gren-500: #5cac54;
+  // --gren-600: #5cc254;
+
+  --beige-300: #D29E50;
+  --beige-400: #D2B48C;
+
+  --beige-500: #9f8368;
+  --beige-600: #b99c7c;
+
+  --marine-500: #443c44;
 }
 
 * {
@@ -30,6 +38,18 @@
   }
 }
 
+@media(max-width: 540px) {
+  html {
+    font-size: 84.375%;
+  }
+}
+
+@media(max-width: 360px) {
+  html {
+    font-size: 81.25%;
+  }
+}
+
 
 body, input, textarea, button {
   font: 500 1rem Inter, sans-serif;
@@ -39,7 +59,7 @@ body, input, textarea, button {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-family: Lexend, sans-serif;
-  color: var(--gren-500)
+  color: var(--beige-500)
 }
 
 h1 {
@@ -56,4 +76,5 @@ h3 {
 
 button {
   cursor: pointer;
+  background-color: var(--beige-500) !important;
 }

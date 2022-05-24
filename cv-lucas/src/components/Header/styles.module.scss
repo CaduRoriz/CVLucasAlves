@@ -1,15 +1,25 @@
-.headerContainer{
+.header{
     background: var(--gray-50);
     height: 6.5rem;
-    position: fixed;
     width: 100%;
-    display: flex;
+    position: fixed;
+    border-bottom: 1px solid var(--gray-100);
     align-items: center;
     flex-direction: row;
 
-    padding: 2rem 3rem;
+    z-index: 2;
+    
+}
 
-    // border-bottom: 1px solid var(--gray-100);
+.headerContainer{
+    
+    padding: 2rem 0rem;
+    width: 90%;
+    display: flex;
+    margin:auto;
+    max-width: 1200px;
+
+    
 
     img{
         display: none; //apenas enquanto nao disponibiliza logo real
@@ -17,7 +27,7 @@
         width: 50px;
     }
 
-    @media (max-width: 935px){
+    @media (max-width: 420px){
         padding: 2rem;
     }
 
@@ -29,7 +39,7 @@
     padding: 0.5rem;
     margin-left: auto;
 
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
     border-radius: 6px;
 
@@ -68,7 +78,7 @@
         cursor: pointer;
     }
 
-    @media (min-width:935px){   
+    @media (min-width:901px){   
         display: none;
     }
 }
@@ -99,8 +109,13 @@
 
 
 .logoText{
-    margin-left: 1rem;
+    background: none !important;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     p{
+        
         color: var(--gray-300);
         font-size: 0.725rem;
         font-weight: bold;
@@ -112,16 +127,16 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+    gap: 1rem;
 
-    @media (max-width:934px){
+    @media (max-width:900px){
         display: none;
     }
    
     .buttons{
-        margin: 0 0.5rem;
         display: flex;
         color: var(--gray-300);
-        background: none;
+        background: none !important;
         border: none;
         display: flex;
         position: relative;
@@ -134,7 +149,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 1px;
-            background: var(--gren-500);
+            background: var(--beige-500);
             transition: 0.4s;
         
         }
@@ -151,14 +166,13 @@
         color: var(--gray-50);
         padding: 10px;
         height: 50px;
-        background-color: var(--gren-500);
         transition: 0.6s;
         border: none;
         
 
         &:hover{
             text-decoration: none;
-            background-color: var(--gren-600);
+            background-color: var(--beige-600) !important;
             
         }
     }
@@ -176,7 +190,6 @@
 
     border-left: 1px solid var(--gray-100);
     border-bottom: 1px solid var(--gray-100);
-
     transition: 0.6s;
 
 
@@ -184,7 +197,7 @@
         width: 100%;
         height: 4rem;
         padding: 1rem 2rem;
-        background: var(--gray-50);
+        background: var(--gray-50) !important;
         border: none;
         
         &::after{
@@ -195,19 +208,20 @@
             transform: translateX(-50%);
             width: 0;
             height: 1px;
-            background: var(--gren-500);
+            background: var(--beige-600);
             transition: 0.4s;
         }
 
         &:hover{
             &::after{
                 width: 100%;
+
             }
         }
     
     }
 
-    @media (min-width: 926px) {
+    @media (min-width: 901px) {
         display: none;
     }
 

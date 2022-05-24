@@ -1,0 +1,240 @@
+.skillsWraper{
+    display: flex;
+    
+    width: 80%;
+    
+    padding: 4rem;
+    justify-content: center;
+    gap: 8rem;
+
+    background: var(--marine-500);
+
+    margin-top: 3rem;
+
+   position: relative;
+   
+
+    Button{
+        position: absolute;
+        bottom: 2rem;
+        align-self: center;
+    }
+
+    @media (max-width:1000px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+    }
+}
+
+
+.expertise{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    align-items: center;
+    width: 40%;
+    
+    h1{
+        min-width: max-content;
+    }
+    .techCards{
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+
+
+        img{
+            
+            padding: 5px;
+            border: 1px solid var(--gray-500);
+            border-radius: 8px;
+            height: 6rem;
+            width: 6rem;
+            
+            transition: 0.8s;
+    
+            filter: grayscale(0.9);
+
+            &:hover{
+                cursor: pointer;
+                filter: none !important;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            gap: 2rem;
+        }
+
+        @media (max-width: 540px) {
+            gap: 1rem;
+        }
+
+        @media (max-width: 360px) {
+            gap: 2rem;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+    }    
+}
+
+
+.lenguages{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    align-items: center;
+    width: 40%;
+    align-items: center;
+    
+    h1{
+        min-width: max-content;
+    }
+
+    .lenguageCards{
+        padding: 3rem 0;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 300px;
+        justify-content: center;
+    
+        span{
+            color: white;
+            width: 100%;
+        
+            &::after{
+                content:"";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--gray-200);
+                height: 8px;
+                width:100%;
+                z-index: 0;
+            }
+
+        }
+
+        .portuguese{
+            position: relative;
+
+            &::after{
+                content: "100%";
+                position: absolute;
+                right: 0;
+                font-size: 0.8rem;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--beige-500);
+                height: 8px;
+                width: 80%;
+                z-index: 1;
+            }
+        }
+
+        .english{
+            position: relative;
+
+            &::after{
+                content: "100%";
+                position: absolute;
+                right: 0;
+                font-size: 0.8rem;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--beige-500);
+                height: 8px;
+                width: 80%;
+                z-index: 1;
+            }
+        }
+
+        .italian{
+            position: relative;
+
+            &::after{
+                content: "100%";
+                position: absolute;
+                right: 0;
+                font-size: 0.8rem;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--beige-500);
+                height: 8px;
+                width: 80%;
+                z-index: 1;
+            }
+        }
+
+        .spanish{
+            position: relative;
+
+            &::after{
+                content: "100%";
+                position: absolute;
+                right: 0;
+                font-size: 0.8rem;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--beige-500);
+                height: 8px;
+                width: 80%;
+                z-index: 1;
+            }
+        }
+
+        .japanese{
+            position: relative;
+
+            &::after{
+                content: "100%";
+                position: absolute;
+                right: 0;
+                font-size: 0.8rem;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                background: var(--beige-500);
+                height: 8px;
+                width: 80%;
+                z-index: 1;
+            }
+        }
+
+        @media (max-width: 540px) {
+            width: 200px;
+            gap: 2rem;
+        }
+
+    }
+
+}
+

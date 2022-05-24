@@ -1,0 +1,26 @@
+.button{
+        
+    color: var(--gray-50);
+    padding: 10px;
+    height: 2.5rem;
+    transition: 0.6s;
+    border: none;
+    width: 12rem;
+    align-self: flex-start;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        
+        img{
+            height: 1.2rem;
+            margin-left: 1rem;
+            fill: white;
+        }
+    
+    &:hover{
+        text-decoration: none;
+        background-color: var(--beige-600) !important;
+        
+    }
+}

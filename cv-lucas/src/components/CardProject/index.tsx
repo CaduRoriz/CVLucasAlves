@@ -1,9 +1,13 @@
 import styles from './styles.module.scss';
 
-export function CardProject (){
+interface Link {
+    link: String
+}
+
+export function CardProject ({link}: Link){
    return(
     <div className={styles.cardWraper}>
-        <a className={styles.cardButton}>
+        <a href={`${link}`}className={styles.cardButton}>
             <img className={styles.img} src="barco.jpeg"/>
             
             <div className={styles.cardDescription}>

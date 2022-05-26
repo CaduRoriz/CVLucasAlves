@@ -1,10 +1,11 @@
 .main{
-    width: 100%;
-    max-width: 1400px;
     display: flex;
-    padding: 2rem 2rem;
-    height: max-content;
     flex-wrap: wrap;
+
+    width: 90%;
+    max-width: 1400px;
+    padding: 2rem 0rem;
+    height: max-content;
     margin-top: 3rem;
 
     .divTitle{
@@ -62,7 +63,7 @@
 
     .containersCards{
         width: 100%;
-        background-color: #443c44;
+        background-color: var(--marine-500);
         height: max-content;
         padding: 4rem 3rem 2rem 3rem;
         display: grid;
@@ -76,7 +77,6 @@
        
         @media (max-width: 809px) {
             padding-top: 0rem ;
-            
         }
 
         @media (max-width: 1000px) {

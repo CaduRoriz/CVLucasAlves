@@ -1,6 +1,8 @@
 import styles from './styles.module.scss'
 import React from "react";
+import Link from 'next/link'
 
+import { scroll } from '../Scroll';
 
 export function Header () {
     const [menuOpen, setMenu] = React.useState(false); 
@@ -10,17 +12,18 @@ export function Header () {
             <div className={styles.headerContainer}>
                 <img src="logo.png" alt="Logo Lucas Alves'CV"/>
                 
-                <button className={styles.logoText}>
+                <a href="/" className={styles.logoText}>
                     <p>Personal Resume</p>
                     <h2>Lucas Alves</h2>
-                </button>
+                </a >
 
-                <div className={styles.headerButtons}>                                                   
-                        <button className={styles.buttons}>About Me</button>   
-                        <button className={styles.buttons}>Skills</button>                                           
-                        <button className={styles.buttons}>My Projects</button>                            
-                        <button className={styles.buttons}>Experience</button>                                                         
-                        <button className={styles.buttonCallme}>Send me an email</button>
+                <div className={styles.headerButtons}>
+                                                                     
+                        <button onClick = {() => scroll("aboutme")} className={styles.buttons}>About Me</button>   
+                        <button onClick = {() => scroll("skills")} className={styles.buttons}>Skills</button>                                           
+                        <button onClick = {() => scroll("myProjects")} className={styles.buttons}>My Projects</button>                            
+                        <button onClick = {() => scroll("experience")} className={styles.buttons}>Experience</button>                                                         
+                        <button onClick = {() => scroll("contact")} className={styles.buttonCallme}>Send me an email</button>
 
                 </div>
 
@@ -39,25 +42,36 @@ export function Header () {
                 
                     <button className={styles.buttons}
                         onClick={() => {
+                            scroll("aboutme")
                             setMenu(!menuOpen) 
                             
                         }}
                     >About Me</button>     
 
                     <button className={styles.buttons}
-                        onClick={() => setMenu(false)}
+                        onClick={() => {
+                        scroll("skills")
+                        setMenu(false)}}
+                        
                     >Skills</button>  
 
                     <button className={styles.buttons}
-                        onClick={() => setMenu(false)}
+                        onClick={() => {
+                            scroll("myProjects")
+                            setMenu(false)}}
                     >My Projects</button>
 
                     <button className={styles.buttons}
-                        onClick={() => setMenu(false)}
+                        onClick={() => {
+                            scroll("experience")
+                            setMenu(false)
+                        }}
                     >Experiencie</button>   
 
                     <button className={styles.buttons}
-                        onClick={() => setMenu(false)}
+                        onClick={() => {
+                            scroll("contact")
+                            setMenu(false)}}
                     >Send me an email</button>
 
                 </div>

@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main>
         <Header/>
         <Component {...pageProps} />
+        
       </main>
     </div>
     

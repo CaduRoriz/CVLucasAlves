@@ -75,14 +75,14 @@
             margin-top: 5rem;
         }
        
-        @media (max-width: 809px) {
-            padding-top: 0rem ;
-        }
-
         @media (max-width: 1000px) {
             display: flex;
             flex-wrap: wrap; 
             
+        }
+
+        @media (max-width: 809px) {
+            padding-top: 0rem ;
         }
 
         @media (max-width: 500px) {

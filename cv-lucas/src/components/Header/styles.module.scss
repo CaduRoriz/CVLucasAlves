@@ -116,8 +116,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-decoration: none;
-    color: currentColor;
+    text-decoration: none !important;
+    color: currentColor !important;
     p{
         
         color: var(--gray-300);

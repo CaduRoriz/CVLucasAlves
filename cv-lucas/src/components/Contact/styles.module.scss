@@ -177,18 +177,20 @@
 
         
         @media (max-width: 809px) {
-            padding: 2rem;
+            padding: 2rem 0;
             gap: 3rem;
             flex-direction: column;
             align-items: center;
             
             .info{
                 flex-direction: row;
-               margin-left: 2rem;
+                margin-left: 2rem;
                 width: 100%;
                 justify-content: center;
         
             }
+
+           
         }
         
         @media (max-width: 540px) {
@@ -201,12 +203,16 @@
 
         @media (max-width: 420px) {
 
+            align-items: flex-start;
+
             .info{
                 flex-direction: column;
                 width: max-content;
+                
             }
 
             .forms{
+                padding: 0 1rem;
                 div{
                     input{
                         width: 250px;

@@ -33,6 +33,8 @@
 
 }
 
+
+
 .hamburguer{
     width: 3rem;
     height: 2.75rem;
@@ -108,7 +110,7 @@
 
 
 
-.logoText{
+.logoText {
     background: none !important;
     border: none;
     display: flex;
@@ -121,6 +123,7 @@
         color: var(--gray-300);
         font-size: 0.725rem;
         font-weight: bold;
+        
 
     }
 }

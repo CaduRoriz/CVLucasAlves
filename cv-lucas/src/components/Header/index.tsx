@@ -1,21 +1,26 @@
 import styles from './styles.module.scss'
 import React from "react";
-import Link from 'next/link'
+import { useRouter } from 'next/router';
+import { Link } from '@mui/material';
 
 import { scroll } from '../Scroll';
 
 export function Header () {
     const [menuOpen, setMenu] = React.useState(false); 
+     
+    
+
     return(
+
         <header className={styles.header}>
 
             <div className={styles.headerContainer}>
                 <img src="logo.png" alt="Logo Lucas Alves'CV"/>
                 
-                <a href="/" className={styles.logoText}>
+                <Link href="/" className={styles.logoText}>
                     <p>Personal Resume</p>
                     <h2>Lucas Alves</h2>
-                </a >
+                </Link >
 
                 <div className={styles.headerButtons}>
                                                                      

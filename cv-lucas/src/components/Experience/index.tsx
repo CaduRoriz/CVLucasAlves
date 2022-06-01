@@ -13,7 +13,7 @@ export function Experience () {
                 <div className={styles.cards}>
                     
                     <div className={styles.experience1}>
-                        <h3>2018 - Now</h3>
+                        <h3>July 2019 - Now</h3>
                         <div className={styles.barra}/>
                         <div> 
                             <p className={styles.pTitle}> Freelance engineering for multi-family construction projects

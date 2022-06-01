@@ -10,35 +10,11 @@ export function Skills() {
                 <div className={styles.expertise}>
                         <h2>Tech Expertise</h2>
                         <div className={styles.techCards}>
-                
-                            <Tooltip title={"Python"} >
-                                <img src="python-logo.jpeg"/> 
-                            </Tooltip>
-                            
-                            <Tooltip title={"AutoCad"}> 
-                                <img src="autocad.jpeg"/>
-                            </Tooltip>
-                            <Tooltip title={"HTML"}> 
-                                <img src="html.jpeg"/> 
-                            </Tooltip>
-                            <Tooltip title={"HTML"}> 
-                                <img src="css.png"/>
-                            </Tooltip>
-                            <Tooltip title={"HTML"}> 
-                            <img src="office.jpeg"/>
-                            </Tooltip>
-                            <Tooltip title={"HTML"}>
-                                <img src="sketchup.jpeg"/> 
-                                </Tooltip>
-                            <Tooltip title={"HTML"}> 
-                                <img src="v-ray.png"/>
-                                </Tooltip>
-                            <Tooltip title={"HTML"}> 
-                                <img src="audacity.jpeg"/>
-                                </Tooltip>
-                            <Tooltip title={"HTML"}>
-                                <img src="adobe.jpeg"/> 
-                                </Tooltip>
+                            {
+                               expertises.map((element, i) => {
+                                   return <Tooltip key={i} title={element.title}><img src={element.img}/></Tooltip>
+                               })
+                            }
                         </div>
                 </div>
                  <div className={styles.lenguages}>
@@ -71,3 +47,44 @@ export function Skills() {
         </div>
     )
 }
+
+
+const expertises = [
+    {
+        "title": "Python",
+        "img": "python-logo.jpeg"
+    },
+    {
+        "title": "AutoCad",
+        "img": "autocad.jpeg"
+    },
+    {
+        "title": "HTML",
+        "img": "html.jpeg"
+    },
+    {
+        "title": "CSS",
+        "img": "css.png"
+    },
+    {
+        "title": "Office",
+        "img": "office.jpeg"
+    },
+    {
+        "title": "Sketchup",
+        "img": "sketchup.jpeg"
+    },
+    {
+        "title": "V-Ray",
+        "img": "v-ray.png"
+    },
+    {
+        "title": "Audacity",
+        "img": "python-logo.jpeg"
+    },
+    {
+        "title": "Adobe",
+        "img": "adobe.jpeg"
+    },
+    
+]

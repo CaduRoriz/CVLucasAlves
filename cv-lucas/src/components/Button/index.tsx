@@ -7,11 +7,10 @@ interface ButtonProps{
     url: String;
     size?: String;
     id?: String;
-    type?: String;
     onClick?: void;
 }
 
-export function Button ({text, url, size, id, type} : ButtonProps ) {
+export function Button ({text, url, size, id} : ButtonProps ) {
     return (
         <button onClick = {() => {
             if(id){
@@ -21,7 +20,7 @@ export function Button ({text, url, size, id, type} : ButtonProps ) {
     )
 }
 
-export function ButtonSubmit ({text, url, size, onClick, type} : ButtonProps ) {
+export function ButtonSubmit ({text, url, size, onClick} : ButtonProps ) {
     return (
         <button type="submit" onClick = {() => {
            onclick

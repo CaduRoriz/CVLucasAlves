@@ -1,10 +1,13 @@
 import { ButtonSubmit } from '../Button'
 import styles from './styles.module.scss'
-import React,{ ReactEventHandler, useState } from 'react';
+import React, { useRef } from 'react';
 
-import  {useForm, SubmitHandler}  from 'react-hook-form';
+import emailjs from '@emailjs/browser';
+
+import  {useForm}  from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+
 
 import * as yup from "yup";
 
@@ -21,9 +24,11 @@ const schema = yup.object({
 })
 
 
-function sendEmail(){
 
-}
+const onSubmit = (data: Form) => {
+    
+};
+
 export function Contact () {
     
 
@@ -31,16 +36,14 @@ export function Contact () {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data: Form) => console.log(data);
-
     return (
-        <div id="contact" className={styles.contactWraper}>
+        <div className={styles.contactWraper}>
            
                 <div className={styles.title}>
                         <img src="completo.jpg"/>
                         <h1> Contact me<strong>, feel free to call or write anytime</strong></h1>
                 </div>
-                <div className={styles.formBody}>
+                <div id="contact" className={styles.formBody}>
                     
                     <div className={styles.info}>
                        
@@ -56,7 +59,7 @@ export function Contact () {
 
                         <div className={styles.website}>
                         <span>Social Media</span>
-                          <a href="https://www.linkedin.com/in/lucas-alves-de-lima-a960b0a5/" target="_blank"> <img src="linkedin.jpeg"/> </a>
+                          <a href="https://www.linkedin.com/in/lucas-alves-de-lima-a960b0a5/" target="_blank" rel="noreferrer">  <img src="linkedin.jpeg"/> </a>
                         </div>
 
                         <div className={styles.media}>
@@ -69,6 +72,7 @@ export function Contact () {
                         <div className={`${styles.input} ${styles.formName}`}>
                             <label>Name</label>
                             <input 
+                            id="name"
                             type="text"
 
                             {...register("name")}
@@ -81,7 +85,7 @@ export function Contact () {
                         <div className={`${styles.input} ${styles.formEmail}`}>
                             <label>Email address</label>
                             <input 
-                            
+                            id="email"
                             {...register("email")}
                             />
                             
@@ -91,7 +95,8 @@ export function Contact () {
 
                         <div className={`${styles.input} ${styles.formMessage}`}>
                             <label>Message</label>
-                            <textarea 
+                            <textarea
+                            id="message" 
                             {...register("message")}
                             />
                             <span>{errors.message?.message}</span>
@@ -105,78 +110,3 @@ export function Contact () {
         </div>
     )
 }
-
-
-
-                // const [errorMessage, setErrorMessage] = useState("");
-                // const [errorName, setErrorName] = useState("");
-                // const [errorEmail, setErrorEmail] = useState("");
-             
-             
-                //  const errorMessages = {
-                //      nome: {
-                //          valueMissing: "The name field can't be empty."
-                //      },
-                //      email: {
-                //          valueMissing: "The email field can't be empty.",
-                //          typeMismatch: "The email typed is not valid."
-                //      },
-                //      message:{
-                //          valueMissing: "The message field can't be empty"
-                //      }
-                //  }
-             
-                //  // const inputs = document.querySelectorAll('input');
-             
-                //  // inputs.forEach(input => {
-                //  //     input.addEventListener('blur', (evento) => {
-                //  //         console.log(evento.target)//passar a valida aqui pra validar no blur
-                //  //     })
-                //  // })
-                 
-                // function handleChange (event: React.ChangeEvent<HTMLInputElement>){
-                //      const fieldName = event.target.getAttribute('name') //passo o nome do input
-                //      const valor = event.target.value;
-                //      switch(fieldName){
-                //          case 'name':
-                //              setName(valor);    
-                //              break;
-                         
-                //          case 'email':
-                //              setEmail(valor);
-                         
-                //              break;
-                //      }
-                // }
-             
-                // function handleChanget (event: React.ChangeEvent<HTMLTextAreaElement>) {
-                //     const valor = event.target.value;
-                //     setMessage(valor);
-                // }
-             
-                // function validaForm () {
-                //      const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
-                     
-                //      if(!regEx.test(email)){
-                //          //mandar mensagem
-                         
-                //          return false;
-                //      }
-             
-                //      if(email == ""){
-                //          //mandar mensagem
-                //          return false;
-                //      }
-             
-                //      if(name == ""){
-                //          // mandar mensagem
-                //          return false;
-                //      }
-             
-                //      if(message == ""){
-                //          //
-                //          return false;
-                //      }
-             
-             
-                // } 

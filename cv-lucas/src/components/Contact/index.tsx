@@ -2,7 +2,6 @@ import { ButtonSubmit } from '../Button'
 import styles from './styles.module.scss'
 import React, { useRef } from 'react';
 
-import emailjs from '@emailjs/browser';
 
 import  {useForm}  from 'react-hook-form';
 

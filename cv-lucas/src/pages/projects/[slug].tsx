@@ -9,7 +9,7 @@ interface CarrosselCompProps{
     description: string;
 }
 
-const Carrossel1: React.FC = () => <h2>Teste caralho</h2>;
+const Carrossel1: React.FC = () => <h2>Waiting to the client photos</h2>;
 
 const Background: React.FC<CarrosselCompProps> = (props) => {
     const { carrossel } = props;
@@ -50,7 +50,7 @@ export default function Project (){
 }
 
 const title1 = "Lorem ipsum dolor sit amet";
-const description1 = " Ut ratione laboriosam vel laudantium quasi eos illo repellat in quaerat magnam sit debitis doloribus sed expedita cupiditate. Vel quidem aut aliquam debitis dolor minima. "
+const description1 = " wating to the client infos to make the projects page "
 
 // <Background carrossel={<CarrosselComp />}/>
   

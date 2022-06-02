@@ -23,17 +23,50 @@ const schema = yup.object({
 })
 
 
-
-const onSubmit = (data: Form) => {
-    
-};
-
 export function Contact () {
     
 
-    const {register , handleSubmit, formState: { errors } } = useForm<Form>({
+    const {register , watch, handleSubmit, reset, formState: { errors } } = useForm<Form>({
         resolver: yupResolver(schema)
     });
+
+    const values = watch(["name", "email", "message"])
+
+    const onSubmit = () => {
+       
+        const form = document.getElementById('form')
+      
+        form?.addEventListener('submit', (e) => {
+            e.preventDefault()
+           
+            
+            const name = values[0]
+           
+            const email = values[1]
+           
+            const message = values[2]
+            
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message
+                })
+            }).then((response) => {
+                console.log(response)
+                alert('Email successfully sent')
+            }).catch((error) => {
+                console.log(error)
+                alert('Error sending message, please try later')
+            })   
+        })
+        
+        reset()
+    };
 
     return (
         <div className={styles.contactWraper}>
@@ -66,7 +99,7 @@ export function Contact () {
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className={styles.forms}>
+                    <form onSubmit={handleSubmit(onSubmit)} id="form" className={styles.forms}>
 
                         <div className={`${styles.input} ${styles.formName}`}>
                             <label>Name</label>

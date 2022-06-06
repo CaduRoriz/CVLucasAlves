@@ -58,13 +58,11 @@ export function Contact () {
                 })
             }).then((response) => {
                 console.log(response)
-                alert('Email successfully sent')
             }).catch((error) => {
-                console.log(error)
-                alert('Error sending message, please try later')
+                console.log(error) 
             })   
         })
-        
+
         reset()
     };
 

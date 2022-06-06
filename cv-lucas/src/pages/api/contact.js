@@ -1,29 +1,39 @@
 const nodemailer = require('nodemailer')
 
-export default function handleSubmitEmail(req, res){
+export default async function handleSubmitEmail(req, res){
     const { name, email, message } = req.body;
 
     let transporter = nodemailer.createTransport({
-        host:'smtp.umbler.com',
-        port:'587',
+        host:'smtp.gmail.com',
+        port:'465',
+        secure:  true,
         auth:{
             user: process.env.USERMAIL,
             pass:process.env.PASSMAIL
         }
     });
 
-    transporter.sendMail({
-        from: process.env.USERMAIL,
-        to: process.env.USERMAIL ,
-        subject: `Contato de ${name} através do site pessoal`, 
-        text: req.body.message, 
-        html: ` <h1>Contato de formulário </br</h1>
-                <p>Email:${email}</br>
-                <p>Nome: ${name}</br> </p>
-                <p>Mensagem: ${message}</p>
-        `, 
+    try{
+        await transporter.sendMail({
+            from: process.env.USERMAIL,
+            replyTo: email,
+            to: process.env.MAILBOX ,
+            subject: `Contato de ${name} através do site pessoal`, 
+            text: req.body.message, 
+            html: ` <h1>Contato de formulário </br</h1>
+                    <p>Email:${email}</br>
+                    <p>Nome: ${name}</br> </p>
+                    <p>Mensagem: ${message}</p>
+            `, 
+    
+        });
+        
+        return res.status(200).send();
 
-    }).then((response) => {console.log(response)})
-    .catch((error) => { console.log(error)})
+    } catch {
+
+        return res.status(400).send();
+    }
+    
 
 }

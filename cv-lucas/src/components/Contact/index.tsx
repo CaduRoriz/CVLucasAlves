@@ -26,28 +26,22 @@ const schema = yup.object({
 export function Contact () {
     
 
-    const {register , watch, handleSubmit, reset, formState: { errors } } = useForm<Form>({
+    const {register , handleSubmit, reset, formState: { errors } } = useForm<Form>({
         resolver: yupResolver(schema)
     });
 
-    const values = watch(["name", "email", "message"])
 
-    const onSubmit = () => {
+    const onSubmit = (data: Form) => {
+        
+          
+        const name = data.name 
        
-        const form = document.getElementById('form')
-      
-        form?.addEventListener('submit', (e) => {
-            e.preventDefault()
+        const email = data.email
            
-            
-            const name = values[0]
-           
-            const email = values[1]
-           
-            const message = values[2]
-            
+        const message = data.message
+        
             fetch('/api/contact', {
-                method: 'POST',
+            method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -58,10 +52,10 @@ export function Contact () {
                 })
             }).then((response) => {
                 console.log(response)
+                
             }).catch((error) => {
                 console.log(error) 
             })   
-        })
 
         reset()
     };

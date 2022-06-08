@@ -18,12 +18,11 @@ export default async function handleSubmitEmail(req, res){
             from: process.env.USERMAIL,
             replyTo: email,
             to: process.env.MAILBOX ,
-            subject: `Contato de ${name} através do site pessoal`, 
-            text: req.body.message, 
-            html: ` <h1>Contato de formulário </br</h1>
-                    <p>Email:${email}</br>
-                    <p>Nome: ${name}</br> </p>
-                    <p>Mensagem: ${message}</p>
+            subject: `Contact throught the personal website`, 
+            html: ` <h1>Form contact </br</h1>
+                     <p>Name: ${name}</p>
+                    <p>Email:${email}</p> 
+                    <p>Message: ${message}</p>
             `, 
     
         });

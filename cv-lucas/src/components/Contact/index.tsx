@@ -1,12 +1,14 @@
 import { ButtonSubmit } from '../Button'
 import styles from './styles.module.scss'
-import React, { useRef } from 'react';
-
-
+import React, { useState } from 'react';
+import Lottie from 'react-lottie';
 import  {useForm}  from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
+
+
+import * as animationData from './animation.json'
 
 import * as yup from "yup";
 
@@ -15,6 +17,7 @@ type Form = {
     email: string;
     message: string;
 }
+
 
 const schema = yup.object({
     name: yup.string().required(),
@@ -25,6 +28,19 @@ const schema = yup.object({
 
 export function Contact () {
     
+    const [loading, setLoading] = useState(false);
+    const [animationState, setAnimationState] = useState({isStopped: false, isPaused:false})
+
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
+
 
     const {register , handleSubmit, reset, formState: { errors } } = useForm<Form>({
         resolver: yupResolver(schema)
@@ -127,8 +143,15 @@ export function Contact () {
                         
                         </div>  
                         <ButtonSubmit text={"Send Message"} url={"send.png"}/>
+                        
+                        <Lottie options={defaultOptions}
+                         height={50}
+                         width={50}
+                         isStopped={animationState.isStopped}
+                         isPaused={animationState.isPaused}/>
                     </form>
                 
+
                 </div> 
                 
         </div>

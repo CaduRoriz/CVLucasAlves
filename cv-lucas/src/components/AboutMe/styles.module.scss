@@ -1,78 +1,68 @@
+.aboutMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-.aboutMe{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-wrap: wrap;
+  height: max-content;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  gap: 6rem;
 
-    height: max-content;
-    width: 100%;
-    max-width: 1200px;
-    padding: 2rem ;
-    gap: 6rem;
-
-
-    @media(max-width: 809px){
-        
-        justify-content: flex-start;
-    }
-    
+  @media (max-width: 809px) {
+    justify-content: flex-start;
+  }
 }
 
-.apresentation{
+.apresentation {
+  width: 100%;
+  max-width: 480px;
+  height: max-content;
+  padding: 2rem 0rem;
 
-    width: 100%;
-    max-width: 480px;
-    height: max-content;
+  .title {
+    align-self: flex-start;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .paragraph {
     padding: 2rem 0rem;
-    
-    .title{
-        align-self: flex-start;
-    }
+    line-height: 1.5rem;
+  }
 
-    a{
-        text-decoration: none;
-    }
+  @media (max-width: 1100px) {
+    max-width: 450px;
+  }
 
-    .paragraph{
-        
-        padding: 2rem 0rem;
-        line-height: 1.5rem;
-    }
+  @media (max-width: 936px) {
+    max-width: 350px;
+  }
 
-    @media (max-width: 1100px) {
-        max-width: 450px;
-        
-    }
-
-    @media (max-width: 936px) {
-        max-width: 350px;
-        
-    }
-
-    @media (max-width: 809px){
-        max-width: 100%;
-        padding: 1rem 4rem 0rem 4rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
+  @media (max-width: 809px) {
+    max-width: 100%;
+    padding: 1rem 4rem 0rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.img{
-    
-    display: none;
-    object-fit: cover;
-    max-width: 25%;
-    min-width: 220px;
-    
-    @media (min-width: 810px) {
-        display: flex;
-    }
+.img {
+  display: none;
+  object-fit: cover;
+  max-width: 25%;
+  min-width: 220px;
 
-    // @media (max-width:1000px){
-    //     width: 80%;
-    //     max-width: 600px;
-    // }
+  @media (min-width: 810px) {
+    display: flex;
+  }
+
+  // @media (max-width:1000px){
+  //     width: 80%;
+  //     max-width: 600px;
+  // }
 }

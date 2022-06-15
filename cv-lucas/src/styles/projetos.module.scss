@@ -1,28 +1,24 @@
-.main{
-    padding: 8.5rem 4rem 2rem 4rem;
-    height: 100vh;
-    background: var(--gray-50);
+.main {
+  padding: 8.5rem 4rem 2rem 4rem;
+  height: 100vh;
+  background: var(--gray-50);
 
-    display: flex;
-    justify-content: center;
-    
+  display: flex;
+  justify-content: center;
 }
 
-.background{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: calc(1400px - 8rem);
-    align-items: center;
-    background: var(--marine-500);
-    padding: 3rem 0;
+.background {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(1400px - 8rem);
+  align-items: center;
+  background: var(--marine-500);
+  padding: 3rem 0;
 
-    gap: 2rem;
+  gap: 2rem;
 
-    p{
-        width: max-content;
-    }
-
-
+  p {
+    width: max-content;
+  }
 }
-
